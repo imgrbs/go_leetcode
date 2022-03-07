@@ -16,11 +16,11 @@ func TestTwoSumWith2Len(t *testing.T) {
 	}
 
 	if actual[0] != 0 {
-		t.Errorf("expect=%v actual=%v TestSell failed.", 0, actual)
+		t.Errorf("expect=%v actual=%v 1st indices failed.", 0, actual)
 	}
 
 	if actual[1] != 1 {
-		t.Errorf("expect=%v actual=%v TestSell failed.", 1, actual)
+		t.Errorf("expect=%v actual=%v 2nd indices failed.", 1, actual)
 	}
 }
 
@@ -35,11 +35,11 @@ func TestTwoSumWith3Len(t *testing.T) {
 	}
 
 	if actual[0] != 1 {
-		t.Errorf("expect=%v actual=%v TestSell failed.", 1, actual)
+		t.Errorf("expect=%v actual=%v 1st indices failed.", 1, actual)
 	}
 
 	if actual[1] != 2 {
-		t.Errorf("expect=%v actual=%v TestSell failed.", 2, actual)
+		t.Errorf("expect=%v actual=%v 2nd indices failed.", 2, actual)
 	}
 }
 func TestTwoSumWith3LenButSwapPosition(t *testing.T) {
@@ -53,10 +53,10 @@ func TestTwoSumWith3LenButSwapPosition(t *testing.T) {
 	}
 
 	if actual[0] != 0 {
-		t.Errorf("expect=%v actual=%v TestSell failed.", 0, actual)
+		t.Errorf("expect=%v actual=%v 1st indices failed.", 0, actual)
 	}
 
 	if actual[1] != 2 {
-		t.Errorf("expect=%v actual=%v TestSell failed.", 2, actual)
+		t.Errorf("expect=%v actual=%v 2nd indices failed.", 2, actual)
 	}
 }

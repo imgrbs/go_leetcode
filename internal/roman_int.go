@@ -25,23 +25,33 @@ func RomanToInt(s string) int {
 
 	lenChar := len(s)
 	for i := 0; i < lenChar; i++ {
-		var nextChar string
-		if i+1 >= lenChar {
-			nextChar = ""
-		} else {
-			nextChar = string(s[i+1])
-		}
+		currentChar := string(s[i])
+		nextChar := getNextChar(s, i, lenChar)
 
-		romanKey := string(s[i]) + nextChar
-
-		value := romanValues[romanKey]
-		if value == 0 {
-			result += romanValues[string(s[i])]
-		} else {
+		value := romanValues[currentChar+nextChar]
+		if isSubtractValue(value) {
 			result += value
 			i++
+			continue
 		}
+
+		result += romanValues[currentChar]
 	}
 
 	return result
+}
+
+func getNextChar(s string, i int, lenChar int) string {
+	if isOutOfLength(i, lenChar) {
+		return ""
+	}
+	return string(s[i+1])
+}
+
+func isSubtractValue(value int) bool {
+	return value != 0
+}
+
+func isOutOfLength(i int, lenChar int) bool {
+	return i+1 >= lenChar
 }
